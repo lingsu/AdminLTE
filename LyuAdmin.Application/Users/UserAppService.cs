@@ -1,6 +1,9 @@
 using System.Threading.Tasks;
 using Abp.Authorization;
 using Abp.Extensions;
+using Abp.Linq.Extensions;
+using Lyu.Utility.Application.Services.Dto;
+using Lyu.Utility.Application.Services.Dto.Extensions;
 using LyuAdmin.Users.Dto;
 
 namespace LyuAdmin.Users
@@ -28,7 +31,17 @@ namespace LyuAdmin.Users
         //Example for primitive method parameters.
         public async Task RemoveFromRole(long userId, string roleName)
         {
+           
             CheckErrors(await _userManager.RemoveFromRoleAsync(userId, roleName));
         }
+
+        public async Task<QueryResultOutput<UserQueryDto>> GetQueryUser(GetQueryUserInput input)
+        {
+            var result = await _userManager.Users
+                .WhereIf(!input.Search.Value.IsNullOrWhiteSpace(),x=>x.UserName.Contains(input.Search.Value))
+                .ToOutputAsync<UserQueryDto>(input);
+            
+            return result;
+        } 
     }
 }

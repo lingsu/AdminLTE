@@ -100,6 +100,7 @@
     <Compile Include="Roles\Dto\RoleQueryDto.cs" />
     <Compile Include="Roles\IRoleAppService.cs" />
     <Compile Include="Roles\Dto\UpdateRolePermissionsInput.cs" />
+    <Compile Include="Users\Dto\GetQueryUserInput.cs" />
     <Compile Include="Users\Dto\UserQueryDto.cs" />
     <Compile Include="Users\IUserAppService.cs" />
     <Compile Include="Roles\RoleAppService.cs" />

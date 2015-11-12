@@ -3792,3 +3792,209 @@ DEBUG 2015-10-15 18:25:21,918 [1    ] Abp.AutoMapper.AbpAutoMapperModule       -
 DEBUG 2015-10-15 18:25:21,949 [1    ] Default                                  - Dynamic web api controller is created for type 'LyuAdmin.Roles.IRoleAppService' with service name 'app/role'.
 DEBUG 2015-10-15 18:25:21,949 [1    ] Default                                  - Dynamic web api controller is created for type 'LyuAdmin.Users.IUserAppService' with service name 'app/user'.
 DEBUG 2015-10-15 18:25:21,949 [1    ] Default                                  - Dynamic web api controller is created for type 'LyuAdmin.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2015-11-12 21:14:59,179 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2015-11-12 21:15:00,941 [1    ] Abp.Modules.AbpModuleManager             - Found 13 ABP modules in total.
+DEBUG 2015-11-12 21:15:00,943 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:00,945 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:00,945 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:00,946 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:00,946 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:00,946 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:00,946 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:00,946 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:00,946 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.LyuAdminApplicationModule, LyuAdmin.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:00,947 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.LyuAdminCoreModule, LyuAdmin.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:00,947 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.LyuAdminDataModule, LyuAdmin.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:00,947 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.Web.LyuAdminWebModule, LyuAdmin.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:00,947 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.Api.LyuAdminWebApiModule, LyuAdmin.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:00,951 [1    ] Abp.Modules.AbpModuleManager             - 13 modules loaded.
+DEBUG 2015-11-12 21:15:02,748 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2015-11-12 21:15:02,753 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2015-11-12 21:15:02,754 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2015-11-12 21:15:02,755 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: LyuAdmin
+DEBUG 2015-11-12 21:15:02,756 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2015-11-12 21:15:04,454 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 5 classes defines auto mapping attributes
+DEBUG 2015-11-12 21:15:04,454 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2015-11-12 21:15:04,573 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Sessions.Dto.UserLoginInfoDto
+DEBUG 2015-11-12 21:15:04,579 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Users.Dto.UserQueryDto
+DEBUG 2015-11-12 21:15:04,579 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Roles.Dto.RoleQueryDto
+DEBUG 2015-11-12 21:15:04,582 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2015-11-12 21:15:04,627 [1    ] Default                                  - Dynamic web api controller is created for type 'LyuAdmin.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2015-11-12 21:15:04,627 [1    ] Default                                  - Dynamic web api controller is created for type 'LyuAdmin.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2015-11-12 21:15:04,628 [1    ] Default                                  - Dynamic web api controller is created for type 'LyuAdmin.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2015-11-12 21:15:33,255 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2015-11-12 21:15:34,203 [1    ] Abp.Modules.AbpModuleManager             - Found 13 ABP modules in total.
+DEBUG 2015-11-12 21:15:34,206 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:34,208 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:34,208 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:34,208 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:34,208 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:34,208 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:34,208 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:34,208 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:34,209 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.LyuAdminApplicationModule, LyuAdmin.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:34,209 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.LyuAdminCoreModule, LyuAdmin.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:34,209 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.LyuAdminDataModule, LyuAdmin.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:34,209 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.Web.LyuAdminWebModule, LyuAdmin.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:34,209 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.Api.LyuAdminWebApiModule, LyuAdmin.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:15:34,212 [1    ] Abp.Modules.AbpModuleManager             - 13 modules loaded.
+DEBUG 2015-11-12 21:15:35,094 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2015-11-12 21:15:35,098 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2015-11-12 21:15:35,099 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2015-11-12 21:15:35,099 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: LyuAdmin
+DEBUG 2015-11-12 21:15:35,105 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2015-11-12 21:15:36,021 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 5 classes defines auto mapping attributes
+DEBUG 2015-11-12 21:15:36,021 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2015-11-12 21:15:36,131 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Sessions.Dto.UserLoginInfoDto
+DEBUG 2015-11-12 21:15:36,136 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Users.Dto.UserQueryDto
+DEBUG 2015-11-12 21:15:36,137 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Roles.Dto.RoleQueryDto
+DEBUG 2015-11-12 21:15:36,139 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2015-11-12 21:15:36,171 [1    ] Default                                  - Dynamic web api controller is created for type 'LyuAdmin.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2015-11-12 21:15:36,171 [1    ] Default                                  - Dynamic web api controller is created for type 'LyuAdmin.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2015-11-12 21:15:36,172 [1    ] Default                                  - Dynamic web api controller is created for type 'LyuAdmin.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2015-11-12 21:17:01,859 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2015-11-12 21:17:02,934 [1    ] Abp.Modules.AbpModuleManager             - Found 13 ABP modules in total.
+DEBUG 2015-11-12 21:17:02,937 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:02,939 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:02,939 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:02,939 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:02,939 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:02,939 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:02,939 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:02,939 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:02,939 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.LyuAdminApplicationModule, LyuAdmin.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:02,940 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.LyuAdminCoreModule, LyuAdmin.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:02,940 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.LyuAdminDataModule, LyuAdmin.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:02,940 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.Web.LyuAdminWebModule, LyuAdmin.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:02,940 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.Api.LyuAdminWebApiModule, LyuAdmin.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:02,943 [1    ] Abp.Modules.AbpModuleManager             - 13 modules loaded.
+DEBUG 2015-11-12 21:17:03,750 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2015-11-12 21:17:03,753 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2015-11-12 21:17:03,754 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2015-11-12 21:17:03,754 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: LyuAdmin
+DEBUG 2015-11-12 21:17:03,754 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2015-11-12 21:17:04,668 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 5 classes defines auto mapping attributes
+DEBUG 2015-11-12 21:17:04,668 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2015-11-12 21:17:04,714 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Sessions.Dto.UserLoginInfoDto
+DEBUG 2015-11-12 21:17:04,718 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Users.Dto.UserQueryDto
+DEBUG 2015-11-12 21:17:04,718 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Roles.Dto.RoleQueryDto
+DEBUG 2015-11-12 21:17:04,721 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2015-11-12 21:17:04,749 [1    ] Default                                  - Dynamic web api controller is created for type 'LyuAdmin.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2015-11-12 21:17:04,750 [1    ] Default                                  - Dynamic web api controller is created for type 'LyuAdmin.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2015-11-12 21:17:04,751 [1    ] Default                                  - Dynamic web api controller is created for type 'LyuAdmin.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2015-11-12 21:17:41,372 [25   ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2015-11-12 21:17:42,424 [25   ] Abp.Modules.AbpModuleManager             - Found 13 ABP modules in total.
+DEBUG 2015-11-12 21:17:42,426 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:42,428 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:42,428 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:42,429 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:42,429 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:42,429 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:42,429 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:42,429 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:42,429 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.LyuAdminApplicationModule, LyuAdmin.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:42,429 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.LyuAdminCoreModule, LyuAdmin.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:42,429 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.LyuAdminDataModule, LyuAdmin.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:42,429 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.Web.LyuAdminWebModule, LyuAdmin.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:42,429 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.Api.LyuAdminWebApiModule, LyuAdmin.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:17:42,433 [25   ] Abp.Modules.AbpModuleManager             - 13 modules loaded.
+DEBUG 2015-11-12 21:17:43,207 [25   ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2015-11-12 21:17:43,210 [25   ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2015-11-12 21:17:43,210 [25   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2015-11-12 21:17:43,211 [25   ] Abp.Localization.LocalizationManager     - Initialized localization source: LyuAdmin
+DEBUG 2015-11-12 21:17:43,211 [25   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2015-11-12 21:17:44,152 [25   ] Abp.AutoMapper.AbpAutoMapperModule       - Found 5 classes defines auto mapping attributes
+DEBUG 2015-11-12 21:17:44,152 [25   ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2015-11-12 21:17:44,197 [25   ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Sessions.Dto.UserLoginInfoDto
+DEBUG 2015-11-12 21:17:44,201 [25   ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Users.Dto.UserQueryDto
+DEBUG 2015-11-12 21:17:44,201 [25   ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Roles.Dto.RoleQueryDto
+DEBUG 2015-11-12 21:17:44,203 [25   ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2015-11-12 21:17:44,231 [25   ] Default                                  - Dynamic web api controller is created for type 'LyuAdmin.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2015-11-12 21:17:44,232 [25   ] Default                                  - Dynamic web api controller is created for type 'LyuAdmin.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2015-11-12 21:17:44,233 [25   ] Default                                  - Dynamic web api controller is created for type 'LyuAdmin.Roles.IRoleAppService' with service name 'app/role'.
+ERROR 2015-11-12 21:18:34,001 [26   ] .Mvc.Controllers.AbpHandleErrorAttribute - System.Web.HttpCompileException (0x80004005): n:\GitHub\AdminLTE\LyuAdmin.Web\Areas\Admin\Views\Shared\_Layout.cshtml(35): error CS0103: 当前上下文中不存在名称“ApplicationPath”
+   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   在 System.Web.WebPages.BuildManagerWrapper.CreateInstanceOfType[T](String virtualPath)
+   在 System.Web.WebPages.VirtualPathFactoryExtensions.CreateInstance[T](IVirtualPathFactory factory, String virtualPath)
+   在 System.Web.WebPages.VirtualPathFactoryManager.CreateInstanceOfType[T](String virtualPath)
+   在 System.Web.WebPages.VirtualPathFactoryExtensions.CreateInstance[T](IVirtualPathFactory factory, String virtualPath)
+   在 System.Web.WebPages.WebPageBase.CreatePageFromVirtualPath(String virtualPath, HttpContextBase httpContext, Func`2 virtualPathExists, DisplayModeProvider displayModeProvider, IDisplayMode displayMode)
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+System.Web.HttpCompileException (0x80004005): n:\GitHub\AdminLTE\LyuAdmin.Web\Areas\Admin\Views\Shared\_Layout.cshtml(35): error CS0103: 当前上下文中不存在名称“ApplicationPath”
+   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   在 System.Web.WebPages.BuildManagerWrapper.CreateInstanceOfType[T](String virtualPath)
+   在 System.Web.WebPages.VirtualPathFactoryExtensions.CreateInstance[T](IVirtualPathFactory factory, String virtualPath)
+   在 System.Web.WebPages.VirtualPathFactoryManager.CreateInstanceOfType[T](String virtualPath)
+   在 System.Web.WebPages.VirtualPathFactoryExtensions.CreateInstance[T](IVirtualPathFactory factory, String virtualPath)
+   在 System.Web.WebPages.WebPageBase.CreatePageFromVirtualPath(String virtualPath, HttpContextBase httpContext, Func`2 virtualPathExists, DisplayModeProvider displayModeProvider, IDisplayMode displayMode)
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+DEBUG 2015-11-12 21:19:39,188 [25   ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2015-11-12 21:19:42,023 [25   ] Abp.Modules.AbpModuleManager             - Found 13 ABP modules in total.
+DEBUG 2015-11-12 21:19:42,031 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:19:42,032 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:19:42,033 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:19:42,033 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:19:42,033 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:19:42,033 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:19:42,033 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:19:42,033 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:19:42,033 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.LyuAdminApplicationModule, LyuAdmin.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:19:42,033 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.LyuAdminCoreModule, LyuAdmin.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:19:42,034 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.LyuAdminDataModule, LyuAdmin.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:19:42,034 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.Web.LyuAdminWebModule, LyuAdmin.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:19:42,034 [25   ] Abp.Modules.AbpModuleManager             - Loaded module: LyuAdmin.Api.LyuAdminWebApiModule, LyuAdmin.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2015-11-12 21:19:42,037 [25   ] Abp.Modules.AbpModuleManager             - 13 modules loaded.
+DEBUG 2015-11-12 21:19:42,671 [25   ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2015-11-12 21:19:42,674 [25   ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2015-11-12 21:19:42,674 [25   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2015-11-12 21:19:42,675 [25   ] Abp.Localization.LocalizationManager     - Initialized localization source: LyuAdmin
+DEBUG 2015-11-12 21:19:42,675 [25   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2015-11-12 21:19:43,504 [25   ] Abp.AutoMapper.AbpAutoMapperModule       - Found 5 classes defines auto mapping attributes
+DEBUG 2015-11-12 21:19:43,504 [25   ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2015-11-12 21:19:43,552 [25   ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Sessions.Dto.UserLoginInfoDto
+DEBUG 2015-11-12 21:19:43,556 [25   ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Users.Dto.UserQueryDto
+DEBUG 2015-11-12 21:19:43,556 [25   ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Roles.Dto.RoleQueryDto
+DEBUG 2015-11-12 21:19:43,559 [25   ] Abp.AutoMapper.AbpAutoMapperModule       - LyuAdmin.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2015-11-12 21:19:43,588 [25   ] Default                                  - Dynamic web api controller is created for type 'LyuAdmin.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2015-11-12 21:19:43,588 [25   ] Default                                  - Dynamic web api controller is created for type 'LyuAdmin.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2015-11-12 21:19:43,589 [25   ] Default                                  - Dynamic web api controller is created for type 'LyuAdmin.Roles.IRoleAppService' with service name 'app/role'.
