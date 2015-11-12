@@ -8,9 +8,9 @@ namespace LyuAdmin.Web.Controllers
     /// <summary>
     /// Derive all Controllers from this class.
     /// </summary>
-    public abstract class LyuAdminControllerBase : AbpController
+    public abstract class WebControllerBase : AbpController
     {
-        protected LyuAdminControllerBase()
+        protected WebControllerBase()
         {
             LocalizationSourceName = LyuAdminConsts.LocalizationSourceName;
         }

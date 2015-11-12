@@ -26,7 +26,7 @@ using MyCompanyName.AbpZeroTemplate.Web.Controllers.Results;
 
 namespace LyuAdmin.Web.Controllers
 {
-    public class AccountController : LyuAdminControllerBase
+    public class AccountController : WebControllerBase
     {
         private readonly TenantManager _tenantManager;
         private readonly UserManager _userManager;

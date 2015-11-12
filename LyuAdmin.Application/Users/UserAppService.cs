@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using Abp.Authorization;
+using Abp.Extensions;
 using LyuAdmin.Users.Dto;
 
 namespace LyuAdmin.Users
@@ -20,7 +21,7 @@ namespace LyuAdmin.Users
         {
             var user = await _userManager.GetUserByIdAsync(input.UserId);
             var permission = _permissionManager.GetPermission(input.PermissionName);
-
+            //_userManager.Users.To<User>()
             await _userManager.ProhibitPermissionAsync(user, permission);
         }
 

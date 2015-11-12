@@ -4,7 +4,7 @@ using Abp.Web.Mvc.Authorization;
 namespace LyuAdmin.Web.Controllers
 {
     [AbpMvcAuthorize]
-    public class HomeController : LyuAdminControllerBase
+    public class HomeController : WebControllerBase
     {
         public ActionResult Index()
         {
