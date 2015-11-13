@@ -16,6 +16,6 @@ namespace LyuAdmin.Users.Dto
         public bool IsActive { get; set; }
         public bool IsEmailConfirmed { get; set; }
         public DateTime? LastLoginTime { get; set; }
-        public ICollection<RoleQueryDto> Roles { get; set; }
+        public List<RoleQueryDto> Roles { get; set; }
     }
 }
