@@ -13,5 +13,9 @@ namespace LyuAdmin.Web.Areas.Admin.Controllers
         {
             return View();
         }
+        public ActionResult Edit(int id)
+        {
+            return PartialView();
+        }
     }
 }

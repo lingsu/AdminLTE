@@ -1,6 +1,9 @@
 ﻿using System.Reflection;
 using Abp.AutoMapper;
 using Abp.Modules;
+using AutoMapper;
+using LyuAdmin.Users;
+using LyuAdmin.Users.Dto;
 
 namespace LyuAdmin
 {
@@ -10,6 +13,9 @@ namespace LyuAdmin
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+
+            Mapper.CreateMap<User, UserQueryDto>()
+            .ForMember(dest => dest.Roles, opt => opt.Ignore());
         }
     }
 }
