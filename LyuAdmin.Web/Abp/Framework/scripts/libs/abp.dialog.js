@@ -1,96 +1,96 @@
 ﻿var app = app || {};
-(function (n) {
-    var t = [];
+(function ($) {
+    var loadScripts = [];
     app.modals = app.modals || {};
     app.ModalManager = function () {
-        function i(t) {
+        function init(t) {
             var r = t + "Container",
             u = "#" + r,
             i = $(u);
-            i.length && i.remove()
+            i.length && i.remove();
         }
-        function u(t) {
-            i(t);
-            var r = t + "Container";
-            return $('<div id="' + r + '"><\/div>').append('<div id="' + t + '" class="modal fade" tabindex="-1" role="modal" aria-hidden="true">  <div class="modal-dialog">    <div class="modal-content"><\/div>  <\/div><\/div>').appendTo("body")
+        function view(id) {
+            init(id);
+            var divId = id + "Container";
+            return $('<div id="' + divId + '"><\/div>').append('<div id="' + id + '" class="modal fade" tabindex="-1" role="modal" aria-hidden="true">  <div class="modal-dialog">    <div class="modal-content"><\/div>  <\/div><\/div>').appendTo("body")
         }
-        var r = function (n) {
-            n.modalId || (n.modalId = "Modal_" + Math.floor(Math.random() * 1e6) + (new Date).getTime())
+        var newId = function (n) {
+            n.modalId || (n.modalId = "Modal_" + Math.floor(Math.random() * 1e6) + (new Date).getTime());
         };
-        return function (f) {
-            function a() {
-                o && o.save && o.save()
+        return function (userOption) {
+            var c, close;
+            newId(userOption);
+            var elc = null,
+            modalId = userOption.modalId,
+            p = "#" + modalId,
+            modal = null,
+            l = null,
+            model = null;
+
+            function save() {
+                alert('save')
+                modal && modal.save && modal.save();
             }
-            function v() {
-                e = $(p);
-                e.modal({
+            function buttonBusy(n) {
+                elc && elc.find(".modal-footer button").button('toggle');
+            }
+
+            function viewShow() {
+                elc = $(p);
+                elc.modal({
                     backdrop: "static"
                 });
-                e.on("hidden.bs.modal",
-                function () {
-                    i(h)
+                elc.on("shown.bs.modal",
+               function () {
+                   elc.find("input:first").focus();
+               });
+
+                var t = app.modals[userOption.modalClass];
+                t && (modal = new t, modal.init && modal.init(l, model));
+                elc.find(".save-button").click(function () {
+                    save();
                 });
-                e.on("shown.bs.modal",
-                function () {
-                    e.find("input:first").focus()
+                elc.find(".modal-body").keydown(function (n) {
+                    n.which == 13 && (n.preventDefault(), save())
                 });
-                var t = app.modals[f.modalClass];
-                t && (o = new t, o.init && o.init(l, s));
-                e.find(".save-button").click(function () {
-                    a()
-                });
-                e.find(".modal-body").keydown(function (n) {
-                    n.which == 13 && (n.preventDefault(), a())
-                });
-                e.modal("show")
+
+                elc.modal("show");
             }
-            function w(n) {
-                e && e.find(".modal-footer button").buttonBusy(n)
-            }
-            var c, y;
-            r(f);
-            var e = null,
-            h = f.modalId,
-            p = "#" + h,
-            o = null,
-            l = null,
-            s = null;
-            return c = function (i) {
-                s = i || {};
-                u(h).find(".modal-content").load(f.viewUrl, s,
-                function (i, r) {
-                    if (r == "error") {
-                        abp.message.warn('InternalServerError');
-                        return
+            c = function(data) {
+                model = data || {};
+                view(modalId).find(".modal-content").load(userOption.viewUrl, model, function (i, r) {
+                    if (r === "error") {
+                        abp.message.warn('页面读取失败');
+                        return;
                     }
-                    v()
-                    //f.scriptUrl && _.indexOf(t, f.scriptUrl) < 0 ? n.getScript(f.scriptUrl).done(function () {
-                    //    t.push(f.scriptUrl);
-                    //    v()
-                    //}).fail(function () {
-                    //    abp.message.warn('scriptUrlInternalServerError')
-                    //}) : v()
-                })
-            },
-            y = function () {
-                e && e.modal("hide")
-            },
-            l = {
+
+                    userOption.scriptUrl && $.inArray(loadScripts, userOption.scriptUrl) < 0 ? $.getScript(userOption.scriptUrl).done(function () {
+                        loadScripts.push(userOption.scriptUrl);
+                        viewShow();
+                    }).fail(function() {
+                        abp.message.warn('Javascript加载错误');
+                    }) : viewShow();
+                });
+            }
+            close = function () {
+                elc && elc.modal("hide");
+            };
+            return l = {
                 open: c,
                 reopen: function () {
-                    c(s)
+                    c(s);
                 },
-                close: y,
+                close: close,
                 getModalId: function () {
-                    return h
+                    return modalId;
                 },
                 getModal: function () {
-                    return e
+                    return elc;
                 },
                 getArgs: function () {
-                    return s
+                    return model;
                 },
-                setBusy: w
+                setBusy: buttonBusy
             }
         }
     }()

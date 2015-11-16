@@ -1,6 +1,5 @@
-﻿
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    ViewBag.Title = "用户";
 }
 
 <div class="content-wrapper">
@@ -24,7 +23,6 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-
                         <table id="jqtable" class="table table-bordered table-striped"></table>
                     </div>
                     <!-- /.box-body -->
@@ -44,157 +42,12 @@
 
 @section Scripts{
     <script type="text/javascript">
-        var _permissions = { edit: true, changePermissions: true, delete: true };
-
+        var _permissions = { edit: true, changePermissions: true, 'delete': true };
     </script>
     <script src="~/Abp/Framework/scripts/libs/abp.dialog.js"></script>
     <!-- DataTables -->
     <script src="~/Content/AdminLTE/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="~/Content/AdminLTE/plugins/datatables/dataTables.bootstrap.min.js"></script>
     <script src="~/Abp/Framework/scripts/libs/abp.datatables.js"></script>
-    <script type="text/javascript">
-        var columns = [
-            {
-                title: '操作',
-                width: '9%',
-                data: 'id',
-                visible: _permissions.edit || _permissions.changePermissions || _permissions.delete,
-                createdCell: function (cell, cellData, rowData, rowIndex, colIndex) {
-                    var $span = $('<span></span>');
-                    if (_permissions.edit) {
-                        $('<button class="btn btn-default btn-xs" title="编辑"><i class="fa fa-edit"></i></button>')
-                            .appendTo($span)
-                            .click(function (e) {
-                                alert(cellData)
-                                // _createOrEditModal.open({ id: data.record.id });
-                            });
-                    }
-
-                    if (_permissions.changePermissions) {
-                        $('<button class="btn btn-default btn-xs" title="权限"><i class="fa fa-list"></i></button>')
-                            .appendTo($span)
-                            .click(function () {
-                                //_userPermissionsModal.open({ id: data.record.id });
-                            });
-                    }
-
-                    if (_permissions.delete) {
-                        $('<button class="btn btn-default btn-xs" title="删除"><i class="fa fa-trash-o"></i></button>')
-                            .appendTo($span)
-                            .click(function () {
-                                //deleteUser(data.record);
-                            });
-                    }
-                    $span.appendTo($(cell));
-                },
-                render: function (data, type, full, meta) {
-                    return '';
-                }
-            },
-            { data: 'userName', title: '用户名' },
-            { data: 'name', title: '名字' },
-            { data: 'surname', title: '姓氏' },
-            {
-                data: 'roles',
-                title: '角色',
-                render: function(data) {
-                    var roleNames = '';
-                    for (var j = 0; j < data.length; j++) {
-                        if (roleNames.length) {
-                            roleNames = roleNames + ', ';
-                        }
-                        roleNames = roleNames + data[j].name;
-                    };
-                    return roleNames;
-                }
-            },
-            { data: 'emailAddress', title: '邮箱地址' },
-            { data: 'isEmailConfirmed', title: '邮箱地址验认' },
-            { data: 'isActive', title: '激活' },
-            {
-                data: 'lastLoginTime',
-                title: '上次登录时间'
-            },
-            {
-                data: 'creationTime',
-                title: '创建时间'
-
-            }
-        ];
-
-        $(function() {
-            var databales = new abp.Datatables({
-                table: '#jqtable',
-                columns: columns,
-                //createdRow: function (row, data, dataIndex) {
-                //    console.log(data)
-                //},
-                ajax: abp.appPath + "api/services/app/user/GetQueryUser",
-                //"info": true,
-                "autoWidth": true
-            });
-
-            var _createOrEditModal = new app.ModalManager({
-                viewUrl: '/admin/home/Edit/',
-                scriptUrl: abp.appPath + 'Areas/Mpa/Views/Users/_CreateOrEditModal.js',
-                modalClass: 'CreateOrEditUserModal'
-            });
-
-            //新增
-            $("#btnNew").click(function() {
-
-                _createOrEditModal.open({ id: 1 })
-
-                //abp.dialog({
-
-                //    width: "1000px",
-                //    height: "700px",
-                //    title: "新增<#= FunctionName #>",
-                //    href: abp.appPath + '<#= ModuleName #>/<#= EntityName #>/Edit',
-                //    callback: function() {
-
-                //    }
-                //});
-            });
-
-
-            ////批量删除
-            $("#btnDelete").on('click', function () {
-                var idList = databales.getSelectedIdList();
-                if (idList.length === 0) return;
-                abp.message.confirm(abp.utils.formatString("您确认要删除选中的{0}行吗？", idList.length), function (result) {
-                    if (!result) return; //取消
-                    console.log(abp.ajax({
-                        url: '/api/services/user/User/BatchDeleteUser',
-                        data: idList
-                    }))
-                    abp.ajax({
-                        url:  '/api/services/user/User/BatchDeleteUser',
-                        data: idList
-                    }).done(function (ret) {
-                        abp.success("删除成功");
-                        //abp.grid.reloadList();
-                    });
-                });
-            });
-
-            ////删除
-            //$("#btnDelete").on('click', function () {
-            //    var row = abp.grid.getSelectedOneRowData();
-            //    if (!row) return;
-            //    abp.confirm("您确认要删除选中的行吗？", function (result) {
-            //        if (!result) return; //取消
-            //        var data = { id: row.id };
-            //        abp.ajax({
-            //            url: abp.appPath + 'api/services/<#= ModuleName #>/<#= EntityName #>/Delete<#= EntityName #>',
-            //            data: data
-            //        }).done(function (ret) {
-            //            abp.success("删除成功");
-            //            abp.grid.reloadList();
-            //        });
-            //    });
-            //});
-
-        });
-    </script>
+    <script src="~/Areas/Admin/Js/User/index.js"></script>
 }

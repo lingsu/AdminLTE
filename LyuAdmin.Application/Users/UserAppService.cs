@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Abp.Authorization;
 using Abp.Authorization.Users;
+using Abp.AutoMapper;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using Abp.Extensions;
@@ -65,6 +66,12 @@ namespace LyuAdmin.Users
             }
 
              return result;
+        }
+
+        public async Task<UserDto> GetUser(long id)
+        {
+            var entity = await _userManager.GetUserByIdAsync(id);
+            return entity.MapTo<UserDto>();
         }
     }
 }

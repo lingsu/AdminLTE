@@ -274,6 +274,8 @@
     <Content Include="App\Main\views\layout\layout.js" />
     <Content Include="App\Main\views\home\home.js" />
     <Content Include="App\Main\views\about\about.js" />
+    <Content Include="Areas\Admin\Js\User\index.js" />
+    <Content Include="Areas\Admin\Js\User\_CreateOrEditModal.js" />
     <Content Include="Content\AdminLTE\.gitignore" />
     <Content Include="Content\AdminLTE\bootstrap\css\bootstrap.css" />
     <Content Include="Content\AdminLTE\bootstrap\css\bootstrap.min.css" />

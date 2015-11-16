@@ -381,4 +381,7 @@
         return str;
     };
 
+    abp.consts = {
+        userManagement: { defaultAdminUserName: "admin" }
+    }
 })();

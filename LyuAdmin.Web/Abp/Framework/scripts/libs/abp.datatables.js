@@ -105,15 +105,18 @@ if (typeof String.prototype.startsWith != 'function') {
 
             //刷新
             $("#btnReload").on('click', function () {
-                self.datatable.ajax.reload(null, false);
+                self.reloadList();
             });
 
             self.getSelectedIdList = function () {
-                return self.datatable.rows('.' + opts.select.style).data();
+                return self.datatable.rows('.' + opts.select.style).data().toArray();
             }
             self.getSelectedOneRowData = function () {
                 var data = self.getSelectedIdList();
                 return data.length ? data[0] : null;
+            }
+            self.reloadList = function() {
+                self.datatable.ajax.reload(null, false);
             }
         }
     }();

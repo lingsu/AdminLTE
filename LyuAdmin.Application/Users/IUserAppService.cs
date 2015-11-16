@@ -10,6 +10,8 @@ namespace LyuAdmin.Users
         Task ProhibitPermission(ProhibitPermissionInput input);
 
         Task RemoveFromRole(long userId, string roleName);
+        Task<UserDto> GetUser(long id);
         Task<QueryResultOutput<UserQueryDto>> GetQueryUser(GetQueryUserInput input);
+
     }
 }

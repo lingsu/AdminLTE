@@ -102,8 +102,15 @@
     <script src="//cdn.bootcss.com/moment.js/2.10.6/moment.min.js"></script>
     <!-- AdminLTE App -->
     <script src="/Content/AdminLTE/dist/js/app.min.js"></script>
+
+    <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
+
+
     <script src="~/Abp/Framework/scripts/abp.js"></script>
     <script src="~/Abp/Framework/scripts/libs/abp.jquery.js"></script>
+    <script src="~/api/AbpServiceProxies/GetAll"></script>
+    <script src="~/AbpScripts/GetScripts" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
     @RenderSection("Scripts", false)
 </body>
 </html>
