@@ -1,32 +1,46 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using Abp.AutoMapper;
 using Abp.Domain.Entities;
 
 namespace LyuAdmin.Users.Dto
 {
     [AutoMap(typeof(User))]
-    public class UserDto:Entity<long>
+    public class UserDto : Entity<long>
     {
         [Required]
         public string Name { get; set; }
         [StringLength(32)]
         [Required]
-        public  string Surname { get; set; }
+        public string Surname { get; set; }
 
         [StringLength(32)]
         [Required]
-        public virtual string UserName { get; set; }
+        public string UserName { get; set; }
 
-        [Required]
-        [StringLength(128)]
-        public virtual string Password { get; set; }
+        [StringLength(32,MinimumLength = 6)]
+        [DisplayName("密码")]
+        public string Password { get; set; }
+        [Compare("Password")]
+        [StringLength(32, MinimumLength = 6)]
+        [DisplayName("密码 (核对)")]
+        public string PasswordRepeat { get; set; }
         [Required]
         [StringLength(256)]
-        public virtual string EmailAddress { get; set; }
+        public string EmailAddress { get; set; }
 
-        public virtual bool IsEmailConfirmed { get; set; }
-        public virtual string EmailConfirmationCode { get; set; }
-        public virtual bool IsActive { get; set; }
+        public bool IsEmailConfirmed { get; set; }
+        [DisplayName("下次登录需要修改密码")]
+        public bool ShouldChangePasswordOnNextLogin { get; set; }
+        [DisplayName("发送激活邮件")]
+        public string SendActivationEmail { get; set; }
+        public string EmailConfirmationCode { get; set; }
+        [DisplayName("激活")]
+        public bool IsActive { get; set; }
+        [DisplayName("使用随机密码")]
+        public bool SetRandomPassword { get; set; }
+        public IList<string> AssignedRoleNames { get; set; }
 
     }
 }

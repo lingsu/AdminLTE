@@ -4,11 +4,14 @@ using System.Threading.Tasks;
 using Abp.Authorization;
 using LyuAdmin.Authorization.Roles;
 using LyuAdmin.Roles.Dto;
+using System.Collections.Generic;
+using System.Data.Entity;
+using Lyu.Utility.Extensions;
 
 namespace LyuAdmin.Roles
 {
     /* THIS IS JUST A SAMPLE. */
-    public class RoleAppService : LyuAdminAppServiceBase,IRoleAppService
+    public class RoleAppService : LyuAdminAppServiceBase, IRoleAppService
     {
         private readonly RoleManager _roleManager;
         private readonly IPermissionManager _permissionManager;
@@ -28,6 +31,16 @@ namespace LyuAdmin.Roles
                 .ToList();
 
             await _roleManager.SetGrantedPermissionsAsync(role, grantedPermissions);
+        }
+
+        /// <summary>
+        /// 获取所有<#= FunctionName #>列表
+        /// </summary>
+        public async Task<IEnumerable<RoleDto>> GetRoleList()
+        {
+            var query = _roleManager.Roles.OrderBy(x => x.CreationTime);
+            var list = await query.To<RoleDto>().Take(100).ToListAsync();
+            return list;
         }
     }
 }

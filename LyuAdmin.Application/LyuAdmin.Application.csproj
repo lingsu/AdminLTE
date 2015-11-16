@@ -105,6 +105,7 @@
     <Compile Include="LyuAdminApplicationModule.cs" />
     <Compile Include="LyuAdminAppServiceBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles\Dto\RoleDto.cs" />
     <Compile Include="Roles\Dto\RoleQueryDto.cs" />
     <Compile Include="Roles\IRoleAppService.cs" />
     <Compile Include="Roles\Dto\UpdateRolePermissionsInput.cs" />

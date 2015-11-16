@@ -71,7 +71,9 @@ namespace LyuAdmin.Users
         public async Task<UserDto> GetUser(long id)
         {
             var entity = await _userManager.GetUserByIdAsync(id);
-            return entity.MapTo<UserDto>();
+            var dto = entity.MapTo<UserDto>();
+            dto.AssignedRoleNames = await _userManager.GetRolesAsync(id);
+            return dto;
         }
     }
 }
