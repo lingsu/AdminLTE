@@ -9,6 +9,7 @@ namespace LyuAdmin.Users.Dto
     [AutoMap(typeof(User))]
     public class UserDto : Entity<long>
     {
+        private IList<string> _assignedRoleNames;
         [Required]
         public string Name { get; set; }
         [StringLength(32)]
@@ -40,7 +41,12 @@ namespace LyuAdmin.Users.Dto
         public bool IsActive { get; set; }
         [DisplayName("使用随机密码")]
         public bool SetRandomPassword { get; set; }
-        public IList<string> AssignedRoleNames { get; set; }
+
+        public IList<string> AssignedRoleNames
+        {
+            get { return _assignedRoleNames ?? (_assignedRoleNames = new List<string>()); }
+            set { _assignedRoleNames = value; } 
+        }
 
     }
 }

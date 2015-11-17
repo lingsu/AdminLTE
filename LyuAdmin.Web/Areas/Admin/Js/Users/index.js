@@ -3,8 +3,8 @@
         var _userService = abp.services.app.user;
 
         var _createOrEditModal = new app.ModalManager({
-            viewUrl: '/admin/home/Edit/',
-            scriptUrl: abp.appPath + 'Areas/admin/js/User/_CreateOrEditModal.js',
+            viewUrl: '/admin/user/Edit/',
+            scriptUrl: abp.appPath + 'Areas/admin/js/Users/_CreateOrEditModal.js',
             modalClass: 'CreateOrEditUserModal'
         });
 

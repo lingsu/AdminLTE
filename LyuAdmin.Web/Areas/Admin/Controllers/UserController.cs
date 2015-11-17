@@ -7,15 +7,16 @@ using System.Web.Mvc;
 using LyuAdmin.Roles;
 using LyuAdmin.Users;
 using LyuAdmin.Users.Dto;
+using LyuAdmin.Web.Areas.Admin.Models.Users;
 
 namespace LyuAdmin.Web.Areas.Admin.Controllers
 {
-    public class HomeController : Controller
+    public class UserController : Controller
     {
         private readonly IUserAppService _userAppService;
         private readonly IRoleAppService _roleAppService;
 
-        public HomeController(IUserAppService userAppService, IRoleAppService roleAppService)
+        public UserController(IUserAppService userAppService, IRoleAppService roleAppService)
         {
             _userAppService = userAppService;
             _roleAppService = roleAppService;
@@ -28,13 +29,14 @@ namespace LyuAdmin.Web.Areas.Admin.Controllers
         }
         public async Task<ActionResult> Edit(long? id)
         {
-            UserDto model;
+            var model = new CreateOrUpdateViewModel();
+          
             if (id.HasValue)
-                model = await _userAppService.GetUser(id.Value);
+                model.User = await _userAppService.GetUser(id.Value);
             else
-                model = new UserDto();
+                model.User = new UserDto();
 
-            var roles = await _roleAppService.GetRoleList();
+            model.Roles = await _roleAppService.GetRoleList();
            // ViewBag.roles = new SelectItem
             return PartialView(model);
         }
