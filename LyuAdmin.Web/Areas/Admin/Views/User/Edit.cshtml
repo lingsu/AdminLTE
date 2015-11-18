@@ -42,7 +42,7 @@
                     @foreach (var roleDto in Model.Roles)
                     {
                         <div class="md-checkbox">
-                            
+
                             @if ((!inserted && roleDto.IsDefault) || Model.User.AssignedRoleNames.Any(x => x == roleDto.Name))
                             {
                                 <input class="md-check" type="checkbox" checked name="AssignedRoleNames" value="@roleDto.Name">

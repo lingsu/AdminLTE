@@ -1,5 +1,6 @@
 ﻿@{
     ViewBag.Title = "用户";
+    var createRole = IsGranted(UserPermissions.User_Create_User);
 }
 
 <div class="content-wrapper">
@@ -44,10 +45,8 @@
     <script type="text/javascript">
         var _permissions = { edit: true, changePermissions: true, 'delete': true };
     </script>
-    <script src="~/Abp/Framework/scripts/libs/abp.dialog.js"></script>
-    <!-- DataTables -->
-    <script src="~/Content/AdminLTE/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="~/Content/AdminLTE/plugins/datatables/dataTables.bootstrap.min.js"></script>
-    <script src="~/Abp/Framework/scripts/libs/abp.datatables.js"></script>
+   @Scripts.Render("~/js/form")
+   @Scripts.Render("~/js/datatables")
+  
     <script src="~/Areas/Admin/Js/Users/index.js"></script>
 }

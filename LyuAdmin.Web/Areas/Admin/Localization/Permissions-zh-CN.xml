@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="zh-CN">
+  <texts>
+    <text name="Role" value="角色管理管理" />
+    <text name="CreateRole" value="新增角色管理" />
+    <text name="UpdateRole" value="更新角色管理" />
+    <text name="DeleteRole" value="删除角色管理" />
+  </texts>
+</localizationDictionary>

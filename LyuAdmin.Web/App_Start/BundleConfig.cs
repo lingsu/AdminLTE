@@ -75,6 +75,18 @@ namespace LyuAdmin.Web
                 new ScriptBundle("~/Bundles/App/Main/js")
                     .IncludeDirectory("~/App/Main", "*.js", true)
                 );
+
+            bundles.Add(
+                new ScriptBundle("~/js/form").Include(
+                    "~/Scripts/jquery.validate.min.js",
+                    "~/Abp/Framework/scripts/libs/jquery-validation/messages_zh.min.js"));
+
+            bundles.Add(
+                new ScriptBundle("~/js/datatables").Include(
+                    "~/Content/AdminLTE/plugins/datatables/jquery.dataTables.min.js",
+                    "~/Content/AdminLTE/plugins/datatables/dataTables.bootstrap.min.js",
+                    "~/Abp/Framework/scripts/libs/abp.datatables.js"));
+
         }
     }
 }
