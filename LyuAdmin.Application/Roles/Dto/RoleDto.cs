@@ -15,7 +15,7 @@ namespace LyuAdmin.Roles.Dto
     /// 角色管理
     /// </summary>
 
-  [AutoMap(typeof(Role))]
+    [AutoMap(typeof(Role))]
     public class RoleDto : EntityDto, IValidate
     {
         /// <summary>
