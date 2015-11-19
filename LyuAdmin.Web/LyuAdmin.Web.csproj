@@ -289,7 +289,6 @@
     <Content Include="App\Main\views\about\about.js" />
     <Content Include="Areas\Admin\Js\Users\index.js" />
     <Content Include="Areas\Admin\Js\Users\_CreateOrEditModal.js" />
-    <EmbeddedResource Include="Areas\Admin\Localization\Permissions-zh-CN.xml" />
     <Content Include="Content\AdminLTE\.gitignore" />
     <Content Include="Content\AdminLTE\bootstrap\css\bootstrap.css" />
     <Content Include="Content\AdminLTE\bootstrap\css\bootstrap.min.css" />

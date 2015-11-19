@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -31,8 +32,8 @@ namespace LyuAdmin.Web
             // Configuration.Localization.Languages.Add(new LanguageInfo("en", "English", "famfamfam-flag-england"));
             // Configuration.Localization.Languages.Add(new LanguageInfo("tr", "Türkçe", "famfamfam-flag-tr"));
             Configuration.Localization.Languages.Add(new LanguageInfo("zh-CN", "简体中文", "famfamfam-flag-cn", true));
-
-            //Configure navigation/menu
+            
+            Configuration.Modules.AbpConfiguration.Set(LocalizationSettingNames.DefaultLanguage, "zh-CN");
             Configuration.Navigation.Providers.Add<LyuAdminNavigationProvider>();
         }
 
