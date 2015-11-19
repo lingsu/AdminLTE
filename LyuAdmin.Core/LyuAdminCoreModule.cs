@@ -26,6 +26,20 @@ namespace LyuAdmin
                         )
                     )
                 );
+
+            Configuration.Localization.Sources.Add(
+                new DictionaryBasedLocalizationSource(
+                    LyuAdminConsts.PermissionsSourceName,
+                    new XmlEmbeddedFileLocalizationDictionaryProvider(
+                        Assembly.GetExecutingAssembly(),
+                        "LyuAdmin.Localization.Permissions"
+                        )
+                    )
+                );
+
+
+            Configuration.Authorization.Providers.Add<AppAuthorizationProvider>();
+
         }
 
         public override void Initialize()

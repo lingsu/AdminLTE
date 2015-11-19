@@ -102,7 +102,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RolesAuthorizationProvider.cs" />
     <Compile Include="LyuAdminApplicationModule.cs" />
     <Compile Include="LyuAdminAppServiceBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,7 +110,6 @@
     <Compile Include="Roles\Dto\RoleQueryDto.cs" />
     <Compile Include="Roles\IRoleAppService.cs" />
     <Compile Include="Roles\Dto\UpdateRolePermissionsInput.cs" />
-    <Compile Include="Roles\RolePermissions.cs" />
     <Compile Include="Users\Dto\GetQueryUserInput.cs" />
     <Compile Include="Users\Dto\UserDto.cs" />
     <Compile Include="Users\Dto\UserQueryDto.cs" />

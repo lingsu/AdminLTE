@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -13,26 +14,23 @@ namespace LyuAdmin.Web
     [DependsOn(typeof(LyuAdminDataModule), typeof(LyuAdminApplicationModule), typeof(LyuAdminWebApiModule))]
     public class LyuAdminWebModule : AbpModule
     {
-       
 
         public override void PreInitialize()
         {
 
-            //Add/remove localization sources here
-            Configuration.Localization.Sources.Add(
-                new DictionaryBasedLocalizationSource(
-                    LyuAdminConsts.PermissionsSourceName,
-                    new XmlEmbeddedFileLocalizationDictionaryProvider(
-                        Assembly.GetExecutingAssembly(),
-                        "LyuAdmin.Localization.Source"
-                        )
-                    )
-                );
+            //Configuration.Localization.Sources.Add(
+            //    new DictionaryBasedLocalizationSource(
+            //        LyuAdminConsts.PermissionsSourceName,
+            //        new XmlFileLocalizationDictionaryProvider(
+            //            HttpContext.Current.Server.MapPath("~/Areas/Admin/Localization")
+            //            )
+            //        )
+            //    );
 
             //Add/remove languages for your application
-            Configuration.Localization.Languages.Add(new LanguageInfo("en", "English", "famfamfam-flag-england", true));
-            Configuration.Localization.Languages.Add(new LanguageInfo("tr", "Türkçe", "famfamfam-flag-tr"));
-            Configuration.Localization.Languages.Add(new LanguageInfo("zh-CN", "简体中文", "famfamfam-flag-cn"));
+            // Configuration.Localization.Languages.Add(new LanguageInfo("en", "English", "famfamfam-flag-england"));
+            // Configuration.Localization.Languages.Add(new LanguageInfo("tr", "Türkçe", "famfamfam-flag-tr"));
+            Configuration.Localization.Languages.Add(new LanguageInfo("zh-CN", "简体中文", "famfamfam-flag-cn", true));
 
             //Configure navigation/menu
             Configuration.Navigation.Providers.Add<LyuAdminNavigationProvider>();

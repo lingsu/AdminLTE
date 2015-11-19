@@ -1,13 +1,16 @@
-﻿@{
+﻿@using LyuAdmin.Authorization.Roles
+@using LyuAdmin.Roles
+@{
     ViewBag.Title = "用户";
-    var createRole = IsGranted(UserPermissions.User_Create_User);
+    var createRole = IsGranted(RolesPermissions.Role_UpdateRole);
+   
 }
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            用户
+            用户 @createRole
         </h1>
     </section>
     <!-- Main content -->
