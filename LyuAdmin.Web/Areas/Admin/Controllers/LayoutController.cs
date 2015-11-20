@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Abp.Application.Navigation;
 using Abp.Localization;
 using Abp.Threading;
+using LyuAdmin.Web.Models.Layout;
 
 namespace LyuAdmin.Web.Areas.Admin.Controllers
 {
@@ -22,15 +23,15 @@ namespace LyuAdmin.Web.Areas.Admin.Controllers
 
 
         [ChildActionOnly]
-        public PartialViewResult LeftMenu()
+        public PartialViewResult LeftMenu(string activeMenu)
         {
-            //var model = new TopMenuViewModel
-            //{
-            //    MainMenu = AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync("MainMenu", AbpSession.UserId)),
-            //    ActiveMenuItemName = activeMenu
-            //};
+            var model = new TopMenuViewModel
+            {
+                MainMenu = AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync("AdministrationMenu", AbpSession.UserId)),
+                ActiveMenuItemName = activeMenu
+            };
 
-            return PartialView("_LeftMenu");
+            return PartialView("_LeftMenu", model);
         }
 
         [ChildActionOnly]

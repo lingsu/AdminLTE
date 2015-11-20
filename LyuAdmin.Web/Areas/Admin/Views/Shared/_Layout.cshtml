@@ -72,7 +72,7 @@
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu">
                     <li class="header">导航</li>
-                    @Html.Action("leftmenu", "Layout")
+                    @Html.Action("leftmenu", "Layout" ,new { activeMenu = ViewBag.ActiveMenu })
                 </ul>
             </section>
             <!-- /.sidebar -->

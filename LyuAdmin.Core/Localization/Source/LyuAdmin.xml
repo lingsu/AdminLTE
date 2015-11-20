@@ -1,33 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<localizationDictionary culture="en">
+<localizationDictionary culture="zh-CN">
   <texts>
-    <text name="HomePage" value="Home page" />
-    <text name="About" value="About" />
-    <text name="WellcomeMessage" value="Welcome to LyuAdmin!" />
-    <text name="Home_ThisIsATemplate" value="This project template is a starting point to develop web applicatins using..." />
-    <text name="Home_AspNetDescription" value="ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that enables a clean separation of concerns and that gives you full control over markup for enjoyable, agile development." />
-    <text name="Home_AspNetBoilerplateDescription" value="ASP.NET Boilerplate is a framework to build web based applications with best practices and most popular tools." />
-    <text name="LearnMore" value="Learn more" />
-    <text name="Home_AngularDescription" value="AngularJs is a Single-Page Application framework by Google. It lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop." />
-    <text name="AboutFormat" value="About {0}" />
-    <text name="About_AspNetBoilerplateDescription" value="ASP.NET Boilerplate is a starting point for new web applications with best practices and most popular tools! ASP.NET Boilerplate provides an infrastructure for &lt;strong&gt;NLayer architecture&lt;/strong&gt; and &lt;strong&gt;Domain Driven Design&lt;/strong&gt;." />
-    <text name="ForMoreInformation" value="For more information" />
+    <text name="HomePage" value="主页" />
+    <text name="About" value="关于我们" />
+    <text name="WellcomeMessage" value="欢迎使用 LyuAdmin!" />
+    <text name="Home_ThisIsATemplate" value="LyuAdmin项目模板是Web应用开发的起点,它采用..." />
+    <text name="Home_AspNetDescription" value="ASP.NET MVC提供了强大的、基于模式的途径，来搭建动态Web应用。它使您做到清晰的关注点分离，享受完全可控的、有趣的、敏捷的开发." />
+    <text name="Home_AspNetBoilerplateDescription" value="ASP.NET Boilerplate是一个Web开发框架，它吸纳和提供了Web开发的一些最佳实践，以及流行的框架工具集." />
+    <text name="LearnMore" value="了解更多" />
+    <text name="Home_OtherTools" value="许多其它流行的框架/库，如ASP.NET Web API, EntityFramework/NHibernate, Castle Windsor, Log4Net, Twitter Bootstrap, jQuery..." />
+    <text name="AboutFormat" value="关于 {0}" />
+    <text name="About_AspNetBoilerplateDescription" value="ASP.NET Boilerplate是开发新Web应用的起点,，它吸纳和提供了Web开发的一些最佳实践，以及流行的框架工具集! ASP.NET Boilerplat基础框架能支撑一系列流行的框架实践，如 &lt;strong&gt;NLayer architecture&lt;/strong&gt; and &lt;strong&gt;Domain Driven Design&lt;/strong&gt;." />
+    <text name="ForMoreInformation" value="更多信息" />
     
-    <text name="FormIsNotValidMessage" value="Form is not valid. Please check and fix errors." />
-    <text name="TenantNameCanNotBeEmpty" value="Tenant name can not be empty" />
+    <text name="FormIsNotValidMessage" value="部分输入信息不符合要求，请检查并改正.." />
+    <text name="TenantNameCanNotBeEmpty" value="租户名不能为空" />
 
-    <text name="InvalidUserNameOrPassword" value="Invalid user name or password" />
-    <text name="ThereIsNoTenantDefinedWithName{0}" value="There is no tenant defined with name {0}" />
-    <text name="TenantIsNotActive" value="Tenant {0} is not active." />
-    <text name="UserIsNotActiveAndCanNotLogin" value="User {0} is not active and can not log in." />
-    <text name="PleaseEnterLoginInformation" value="Please enter login information" />
-    <text name="TenancyName" value="Tenancy name" />
-    <text name="UserNameOrEmail" value="User name or email" />
-    <text name="Password" value="Password" />
-    <text name="RememberMe" value="Remember me" />
-    <text name="LogIn" value="Log in" />
+    <text name="InvalidUserNameOrPassword" value="用户名或密码无效" />
+    <text name="ThereIsNoTenantDefinedWithName{0}" value="租户 {0}不存在" />
+    <text name="TenantIsNotActive" value="租户 {0} 未激活." />
+    <text name="UserIsNotActiveAndCanNotLogin" value="用户 {0} 未激活，不能登录." />
+    <text name="PleaseEnterLoginInformation" value="请输入登录信息" />
+    <text name="TenancyName" value="租户名称" />
+    <text name="UserNameOrEmail" value="用户名或邮箱地址" />
+    <text name="Password" value="密码" />
+    <text name="RememberMe" value="记住我" />
+    <text name="LogIn" value="登录" />
+
+    <text name="LoginFailed" value="登录失败!" />
     
-    <text name="LoginFailed" value="Login failed!" />
-
   </texts>
 </localizationDictionary>

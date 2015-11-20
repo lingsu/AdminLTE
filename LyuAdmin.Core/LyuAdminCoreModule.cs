@@ -40,7 +40,7 @@ namespace LyuAdmin
 
             
             Configuration.Authorization.Providers.Add<AppAuthorizationProvider>();
-
+            Configuration.Navigation.Providers.Add<AdministrationNavigationProvider>();
         }
 
         public override void Initialize()
