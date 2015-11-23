@@ -68,7 +68,7 @@
                 assignedRoleNames: assignedRoleNames,
                 sendActivationEmail: user.SendActivationEmail
             }).done(function () {
-                abp.notify.info(app.localize('SavedSuccessfully'));
+                abp.notify.info('保存成功.');
                 _modalManager.close();
                 abp.event.trigger('app.createOrEditUserModalSaved');
             }).always(function () {

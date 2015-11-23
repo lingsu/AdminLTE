@@ -30,17 +30,17 @@ namespace LyuAdmin.Users
         /// <summary>
         /// 新增或更改用户
         /// </summary>
-        Task CreateOrUpdateUser(UserDto input);
+        Task CreateOrUpdateUser(CreateOrUpdateUserInput input);
 
         /// <summary>
         /// 新增用户
         /// </summary>
-        Task CreateUser(UserDto input);
+        Task CreateUser(CreateOrUpdateUserInput input);
 
         /// <summary>
         /// 更新用户
         /// </summary>
-        Task UpdateUser(UserDto input);
+        Task UpdateUser(CreateOrUpdateUserInput input);
 
         /// <summary>
         /// 删除用户

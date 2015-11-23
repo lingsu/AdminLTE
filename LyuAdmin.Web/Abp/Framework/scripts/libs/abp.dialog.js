@@ -28,7 +28,6 @@
             model = null;
 
             function save() {
-                alert('save')
                 modal && modal.save && modal.save();
             }
             function buttonBusy(n) {

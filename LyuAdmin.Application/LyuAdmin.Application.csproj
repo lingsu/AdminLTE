@@ -110,6 +110,7 @@
     <Compile Include="Roles\Dto\RoleQueryDto.cs" />
     <Compile Include="Roles\IRoleAppService.cs" />
     <Compile Include="Roles\Dto\UpdateRolePermissionsInput.cs" />
+    <Compile Include="Users\Dto\CreateOrUpdateUserInput.cs" />
     <Compile Include="Users\Dto\GetQueryUserInput.cs" />
     <Compile Include="Users\Dto\GetUserQueryInput.cs" />
     <Compile Include="Users\Dto\UserDto.cs" />

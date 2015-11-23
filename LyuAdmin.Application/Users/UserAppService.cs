@@ -7,9 +7,11 @@ using Abp.Application.Services.Dto;
 using Abp.Authorization;
 using Abp.Authorization.Users;
 using Abp.AutoMapper;
+using Abp.Configuration.Startup;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using Abp.Extensions;
+using Abp.IdentityFramework;
 using Abp.Linq.Extensions;
 using Abp.UI;
 using Lyu.Utility.Application.Services.Dto;
@@ -29,6 +31,7 @@ namespace LyuAdmin.Users
         private readonly RoleManager _roleManager;
         private readonly IPermissionManager _permissionManager;
         private readonly IRepository<UserRole,long> _userRoleRepository;
+
 
         public UserAppService(UserManager userManager, RoleManager roleManager, IPermissionManager permissionManager, IRepository<UserRole, long> userRoleRepository)
         {
@@ -91,9 +94,9 @@ namespace LyuAdmin.Users
         /// <summary>
         /// 新增或更改用户
         /// </summary>
-        public async Task CreateOrUpdateUser(UserDto input)
+        public async Task CreateOrUpdateUser(CreateOrUpdateUserInput input)
         {
-            if (input.Id == 0)
+            if (input.User.Id == 0)
             {
                 await CreateUser(input);
             }
@@ -107,31 +110,44 @@ namespace LyuAdmin.Users
         /// 新增用户
         /// </summary>
         [AbpAuthorize(UsersPermissions.User_CreateUser)]
-        public  async Task CreateUser(UserDto input)
+        public  async Task CreateUser(CreateOrUpdateUserInput input)
         {
             //if (await _userManager(input.CategoryName))
             //{
             //    throw new UserFriendlyException(L("NameIsExists"));
             //}
-            var entity = await _userManager.CreateAsync(input.MapTo<User>());
-            if (!entity.Succeeded)
+            var entity = input.User.MapTo<User>();
+            entity.Roles = new List<UserRole>();
+            foreach (var assignedRoleName in input.AssignedRoleNames)
             {
-                throw new UserFriendlyException(entity.Errors.First());
+                var role = await _roleManager.GetRoleByNameAsync(assignedRoleName);
+                if (role != null)
+                {
+                    entity.Roles.Add(new UserRole { RoleId = role.Id });
+                }
             }
+            //foreach (var defaultRole in await _roleManager.Roles.Where(r => r.IsDefault).ToListAsync())
+            //{
+            //    entity.Roles.Add(new UserRole { RoleId = defaultRole.Id });
+            //}
+            entity.Password = new PasswordHasher().HashPassword("123qwe");
+            var identityResult = await _userManager.CreateAsync(entity);
+            identityResult.CheckErrors(LocalizationManager);
         }
 
         /// <summary>
         /// 更新用户
         /// </summary>
         [AbpAuthorize(UsersPermissions.User_UpdateUser)]
-        public virtual async Task UpdateUser(UserDto input)
+        public virtual async Task UpdateUser(CreateOrUpdateUserInput input)
         {
             //if (await _userRepository.IsExistsUserByName(input.CategoryName, input.Id))
             //{
             //    throw new UserFriendlyException(L("NameIsExists"));
             //}
-            var entity = await _userManager.GetUserByIdAsync(input.Id);
-            await _userManager.UpdateAsync(input.MapTo(entity));
+            var entity = await _userManager.GetUserByIdAsync(input.User.Id);
+
+            await _userManager.UpdateAsync(input.User.MapTo(entity));
         }
 
         /// <summary>
