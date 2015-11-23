@@ -14,7 +14,7 @@ namespace LyuAdmin
             var pagees = new MenuItemDefinition(
                 Permissions.Pages_Administration,
                 new LocalizableString("PagesAdministration",LyuAdminConsts.PermissionsSourceName),
-                "fa fa-circle-o",
+                "fa fa-wrench",
                 "/admin/dashboard",
                 true,
                 Permissions.Pages_Administration
@@ -23,7 +23,7 @@ namespace LyuAdmin
             var role = new MenuItemDefinition(
                 RolesPermissions.Role,
                 new LocalizableString("Role", LyuAdminConsts.PermissionsSourceName),
-                "fa fa-th",
+                "fa fa-circle-o",
                 "/admin/role",
                 true,
                 RolesPermissions.Role
@@ -32,7 +32,7 @@ namespace LyuAdmin
             var user = new MenuItemDefinition(
                UsersPermissions.User,
                new LocalizableString("User", LyuAdminConsts.PermissionsSourceName),
-               "fa fa-th",
+               "fa fa-circle-o",
                "/admin/user",
                true,
                UsersPermissions.User

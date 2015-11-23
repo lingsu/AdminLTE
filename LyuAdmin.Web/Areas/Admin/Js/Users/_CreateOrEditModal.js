@@ -10,10 +10,10 @@
             var assignedRoleNames = [];
 
             _modalManager.getModal()
-                .find('.user-role-checkbox-list input[type=checkbox]')
+                .find('input[name=AssignedRoleNames]')
                 .each(function () {
                     if ($(this).is(':checked')) {
-                        assignedRoleNames.push($(this).attr('name'));
+                        assignedRoleNames.push($(this).val());
                     }
                 });
 
@@ -51,7 +51,6 @@
         };
 
         this.save = function () {
-            _modalManager.close();
             if (!_$userInformationForm.valid()) {
                 return;
             }

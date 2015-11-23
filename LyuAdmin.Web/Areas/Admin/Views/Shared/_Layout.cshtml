@@ -8,16 +8,15 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>LyuAdmin</title>
-
+    <title>网站管理系统</title>
     <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="/Content/AdminLTE/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <!-- Font Awesome -->
-
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="//cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css">
+    @*<link rel="stylesheet" href="//cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css">*@
+    <!-- toastr -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/Content/AdminLTE/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="/Content/AdminLTE/dist/css/skins/_all-skins.min.css">
@@ -47,18 +46,9 @@
         <aside class="main-sidebar">
             <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
-                <!-- Sidebar user panel -->
-                <div class="user-panel">
-                    <div class="pull-left image">
-                        <img src="/Content/AdminLTE/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                    </div>
-                    <div class="pull-left info">
-                        <p>Alexander Pierce</p>
-                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                    </div>
-                </div>
+               
                 <!-- search form -->
-                <form action="#" method="get" class="sidebar-form">
+                <form action="#" method="get" class="sidebar-form" style="display: none">
                     <div class="input-group">
                         <input type="text" name="q" class="form-control" placeholder="Search...">
                         <span class="input-group-btn">
@@ -94,11 +84,11 @@
     </div>
     <!-- ./wrapper -->
     <!-- jQuery 2.1.4 -->
-    <script src="/Content/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
-    <script src="/Content/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- FastClick -->
-    <script src="/Content/AdminLTE/plugins/fastclick/fastclick.js"></script>
+    <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
     <!-- moment -->
     <script src="//cdn.bootcss.com/moment.js/2.10.6/moment.min.js"></script>
     <!-- AdminLTE App -->
@@ -111,6 +101,8 @@
     <script src="~/Abp/Framework/scripts/libs/abp.jquery.js"></script>
     <script src="~/api/AbpServiceProxies/GetAll"></script>
     <script src="~/AbpScripts/GetScripts" type="text/javascript"></script>
+    <script src="//cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="~/Abp/Framework/scripts/libs/abp.toastr.js"></script>
     <script src="~/Abp/Framework/scripts/libs/abp.dialog.js"></script>
     @RenderSection("Scripts", false)
 </body>

@@ -1,6 +1,9 @@
+using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
+using Abp.Application.Services.Dto;
 using Abp.Authorization;
 using Abp.Authorization.Users;
 using Abp.AutoMapper;
@@ -8,6 +11,7 @@ using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using Abp.Extensions;
 using Abp.Linq.Extensions;
+using Abp.UI;
 using Lyu.Utility.Application.Services.Dto;
 using Lyu.Utility.Application.Services.Dto.Extensions;
 using Lyu.Utility.Extensions;
@@ -48,8 +52,13 @@ namespace LyuAdmin.Users
 
             CheckErrors(await _userManager.RemoveFromRoleAsync(userId, roleName));
         }
-       
-        public async Task<QueryResultOutput<UserQueryDto>> GetQueryUser(GetQueryUserInput input)
+
+        #region 用户管理
+
+        /// <summary>
+        /// 根据查询条件获取用户分页列表
+        /// </summary>
+        public async Task<QueryResultOutput<UserQueryDto>> GetUserQuery(GetUserQueryInput input)
         {
 
             var result = await _userManager.Users
@@ -58,16 +67,19 @@ namespace LyuAdmin.Users
                .ToOutputAsync<UserQueryDto>(input);
             foreach (var userQueryDto in result.Data)
             {
-                //_roleManager.r
                 userQueryDto.Roles = await (from userRole in _userRoleRepository.GetAll()
-                    join role in _roleManager.Roles on userRole.RoleId equals role.Id
-                    where userRole.UserId == userQueryDto.Id
-                    select role).To<RoleQueryDto>().ToListAsync();
+                                            join role in _roleManager.Roles on userRole.RoleId equals role.Id
+                                            where userRole.UserId == userQueryDto.Id
+                                            select role).To<RoleQueryDto>().ToListAsync();
             }
 
-             return result;
+            return result;
         }
+      
 
+        /// <summary>
+        /// 获取指定id的用户信息
+        /// </summary>
         public async Task<UserDto> GetUser(long id)
         {
             var entity = await _userManager.GetUserByIdAsync(id);
@@ -75,5 +87,78 @@ namespace LyuAdmin.Users
             dto.AssignedRoleNames = await _userManager.GetRolesAsync(id);
             return dto;
         }
+
+        /// <summary>
+        /// 新增或更改用户
+        /// </summary>
+        public async Task CreateOrUpdateUser(UserDto input)
+        {
+            if (input.Id == 0)
+            {
+                await CreateUser(input);
+            }
+            else
+            {
+                await UpdateUser(input);
+            }
+        }
+
+        /// <summary>
+        /// 新增用户
+        /// </summary>
+        [AbpAuthorize(UsersPermissions.User_CreateUser)]
+        public  async Task CreateUser(UserDto input)
+        {
+            //if (await _userManager(input.CategoryName))
+            //{
+            //    throw new UserFriendlyException(L("NameIsExists"));
+            //}
+            var entity = await _userManager.CreateAsync(input.MapTo<User>());
+            if (!entity.Succeeded)
+            {
+                throw new UserFriendlyException(entity.Errors.First());
+            }
+        }
+
+        /// <summary>
+        /// 更新用户
+        /// </summary>
+        [AbpAuthorize(UsersPermissions.User_UpdateUser)]
+        public virtual async Task UpdateUser(UserDto input)
+        {
+            //if (await _userRepository.IsExistsUserByName(input.CategoryName, input.Id))
+            //{
+            //    throw new UserFriendlyException(L("NameIsExists"));
+            //}
+            var entity = await _userManager.GetUserByIdAsync(input.Id);
+            await _userManager.UpdateAsync(input.MapTo(entity));
+        }
+
+        /// <summary>
+        /// 删除用户
+        /// </summary>
+        [AbpAuthorize(UsersPermissions.User_DeleteUser)]
+        public async Task DeleteUser(EntityRequestInput<long> input)
+        {
+            //TODO:删除前的逻辑判断，是否允许删除
+            var user = await _userManager.GetUserByIdAsync(input.Id);
+            await _userManager.DeleteAsync(user);
+        }
+
+        /// <summary>
+        /// 批量删除用户
+        /// </summary>
+        [AbpAuthorize(UsersPermissions.User_DeleteUser)]
+        public async Task BatchDeleteUser(IEnumerable<int> input)
+        {
+            //TODO:批量删除前的逻辑判断，是否允许删除
+            foreach (var i in input)
+            {
+                var user = await _userManager.GetUserByIdAsync(i);
+                await _userManager.DeleteAsync(user);
+            }
+        }
+
+        #endregion
     }
 }

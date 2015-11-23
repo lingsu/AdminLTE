@@ -28,7 +28,7 @@
                         $('<button class="btn btn-default btn-xs" title="权限"><i class="fa fa-list"></i></button>')
                             .appendTo($span)
                             .on('click', function () {
-                                //_userPermissionsModal.open({ id: data.record.id });
+                                //_userPermissionsModal.open({ id: cellData });
                             });
                     }
 
@@ -72,7 +72,7 @@
         var databales = new abp.Datatables({
             table: '#jqtable',
             columns: columns,
-            ajax: abp.appPath + "api/services/app/user/GetQueryUser",
+            ajax: abp.appPath + "api/services/app/user/GetUserQuery",
             "autoWidth": true
         });
 

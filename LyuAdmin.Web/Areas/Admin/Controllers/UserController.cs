@@ -12,7 +12,7 @@ using LyuAdmin.Web.Areas.Admin.Models.Users;
 
 namespace LyuAdmin.Web.Areas.Admin.Controllers
 {
-    public class UserController : Controller
+    public class UserController : AdminControllerBase
     {
         private readonly IUserAppService _userAppService;
         private readonly IRoleAppService _roleAppService;
@@ -28,6 +28,7 @@ namespace LyuAdmin.Web.Areas.Admin.Controllers
         {
             return View();
         }
+
         public async Task<ActionResult> Edit(long? id)
         {
             var model = new CreateOrUpdateViewModel();

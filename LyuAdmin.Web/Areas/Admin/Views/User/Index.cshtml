@@ -1,16 +1,19 @@
-﻿@using LyuAdmin
+﻿@using Lyu.Utility.Extensions
+@using LyuAdmin
 @using LyuAdmin.Authorization.Roles
+@using LyuAdmin.Users
 @{
-    ViewBag.Title = "用户";
-    var createRole = IsGranted(RolesPermissions.Role);
-   
+    //ViewBag.Title = "用户";
+    ViewBag.ActiveMenu = Permissions.Pages_Administration;
+    var deletePermission = IsGranted(UsersPermissions.User_DeleteUser);
+    var updatePermission = IsGranted(UsersPermissions.User_UpdateUser);
 }
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            用户 @IsGranted(RolesPermissions.Role)   @IsGranted(Permissions.Pages_Administration) @IsGranted(Permissions.Pages_Administration)
+            用户
         </h1>
     </section>
     <!-- Main content -->
@@ -21,8 +24,14 @@
                 <!-- /.box -->
                 <div class="box">
                     <div class="box-header buttons-panel">
-                        <button id="btnNew" class="btn btn-primary"><i class="icon-plus2"></i>新增用户</button>
-                        <button id="btnDelete" class="btn btn-default"><i class="icon-trash"></i>删除</button>
+                        @if (IsGranted(UsersPermissions.User_CreateUser))
+                        {
+                            <button id="btnNew" class="btn btn-primary"><i class="icon-plus2"></i>新增用户</button>
+                        }
+                        @if (deletePermission)
+                        {
+                            <button id="btnDelete" class="btn btn-default"><i class="icon-trash"></i>删除</button>
+                        }
                         <button id="btnReload" class="btn btn-default"><i class="icon-refresh"></i>刷新</button>
                     </div>
                     <!-- /.box-header -->
@@ -46,7 +55,7 @@
 
 @section Scripts{
     <script type="text/javascript">
-        var _permissions = { edit: true, changePermissions: true, 'delete': true };
+        var _permissions = { edit: @updatePermission.ToJsonString(), changePermissions:  @updatePermission.ToJsonString(), 'delete':  @deletePermission.ToJsonString() };
     </script>
    @Scripts.Render("~/js/form")
    @Scripts.Render("~/js/datatables")
@@ -55,7 +64,25 @@
     <script type="text/javascript">
         $(function() {
             var roleService = abp.services.app.role;
-            //roleService.updateRolePermissions({ RoleId: 1, GrantedPermissionNames :['@Permissions.Pages_Administration','@RolesPermissions.Role']})
-        })
+            @*roleService.updateRolePermissions({
+                RoleId: 1,
+                GrantedPermissionNames: [
+                    '@Permissions.Pages_Administration', '@RolesPermissions.Role', '@UsersPermissions.User', '@UsersPermissions.User_CreateUser'
+                ]
+            });*@
+
+        });
+
+        var ls = [
+
+            { title: '温州科技职业技术学院', type: '招聘会', startTime: moment('2015-11-25 12:00:00'), address: '学院内' },
+            { title: '宁波大红鹰学院', type: '招聘会', startTime: moment('2015-11-27 12:00:00'), address: '学院内' },
+            { title: '温州大学', type: '招聘会', startTime: moment('2015-11-28 09:30:00'), address: '温州大学大学生活动中心' },
+            { title: '浙江工贸职业技术学院', type: '招聘会', startTime: moment('2015-11-28 09:00:00'), address: '温州人才大厦' },
+            { title: '台州职业技术学院', type: '招聘会', startTime: moment('2015-11-28 13:00:00'), address: '台职院体育馆' },
+            { title: '宁波工程学院', type: '招聘会', startTime: moment('2015-11-28 08:30:00'), address: '第一食堂一楼' },
+            { title: '绍兴文理元培学院', type: '招聘会', startTime: moment('2015-12-05 09:00:00'), address: '绍兴文理学院元培学院大学生活动中心' }
+
+        ];
     </script>
 }
