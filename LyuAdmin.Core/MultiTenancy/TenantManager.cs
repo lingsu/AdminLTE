@@ -1,4 +1,6 @@
-﻿using Abp.MultiTenancy;
+﻿using Abp.Application.Editions;
+using Abp.Domain.Repositories;
+using Abp.MultiTenancy;
 using LyuAdmin.Authorization.Roles;
 using LyuAdmin.Editions;
 using LyuAdmin.Users;
@@ -7,10 +9,10 @@ namespace LyuAdmin.MultiTenancy
 {
     public class TenantManager : AbpTenantManager<Tenant, Role, User>
     {
-        public TenantManager(EditionManager editionManager)
-            : base(editionManager)
+        
+        public TenantManager(IRepository<Tenant> tenantRepository, IRepository<TenantFeatureSetting, long> tenantFeatureRepository, AbpEditionManager editionManager) : 
+            base(tenantRepository, tenantFeatureRepository, editionManager)
         {
-
         }
     }
 }

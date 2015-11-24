@@ -28,6 +28,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lyu.Utility", "..\LyuUtilit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lyu.Scaffolding", "..\LyuUtility\Lyu.Utility\Lyu.Scaffolding\Lyu.Scaffolding.csproj", "{6578B162-5074-423F-B2EE-32A09FB8D3B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterBootstrapMVC", "..\TwitterBootstrapMVC\TwitterBootstrapMVC\TwitterBootstrapMVC\TwitterBootstrapMVC.csproj", "{65F1C034-6DFB-44E0-A239-3E5F8ED7211E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{0368D920-FC41-48F2-9340-B840C53BA85C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,11 +70,16 @@ Global
 		{6578B162-5074-423F-B2EE-32A09FB8D3B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6578B162-5074-423F-B2EE-32A09FB8D3B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6578B162-5074-423F-B2EE-32A09FB8D3B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65F1C034-6DFB-44E0-A239-3E5F8ED7211E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65F1C034-6DFB-44E0-A239-3E5F8ED7211E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65F1C034-6DFB-44E0-A239-3E5F8ED7211E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65F1C034-6DFB-44E0-A239-3E5F8ED7211E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C602C47E-F379-40A3-A146-4F19105B3491} = {7E85C7E5-70BD-4C9D-B052-D95955F46609}
+		{65F1C034-6DFB-44E0-A239-3E5F8ED7211E} = {0368D920-FC41-48F2-9340-B840C53BA85C}
 	EndGlobalSection
 EndGlobal

@@ -65,12 +65,12 @@
       <HintPath>..\packages\Abp.Web.Mvc.0.7.4.1\lib\net451\Abp.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Zero, Version=0.7.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Zero.0.7.4.0\lib\net451\Abp.Zero.dll</HintPath>
+    <Reference Include="Abp.Zero, Version=0.7.4.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.0.7.4.1\lib\net451\Abp.Zero.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Zero.EntityFramework, Version=0.7.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Zero.EntityFramework.0.7.4.0\lib\net451\Abp.Zero.EntityFramework.dll</HintPath>
+    <Reference Include="Abp.Zero.EntityFramework, Version=0.7.4.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.EntityFramework.0.7.4.1\lib\net451\Abp.Zero.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Antlr3.Runtime">
@@ -240,11 +240,7 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="T4MVCExtensions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
-      <HintPath>..\packages\T4MVCExtensions.3.6.5\lib\net40\T4MVCExtensions.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="TwitterBootstrapMVC5, Version=3.16.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\TwitterBootstrapMVC5.3.16.4\lib\net40\TwitterBootstrapMVC5.dll</HintPath>
+      <HintPath>..\packages\T4MVCExtensions.3.16.4\lib\net40\T4MVCExtensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease">
@@ -2155,7 +2151,6 @@
     <Content Include="Scripts\sweetalert\sweet-alert.min.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
-    <Content Include="Scripts\TwitterBootstrapMvcJs.js" />
     <Content Include="Views\Account\Login.css">
       <DependentUpon>Login.less</DependentUpon>
     </Content>
@@ -2216,6 +2211,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\..\TwitterBootstrapMVC\TwitterBootstrapMVC\TwitterBootstrapMVC\TwitterBootstrapMVC.csproj">
+      <Project>{65f1c034-6dfb-44e0-a239-3e5f8ed7211e}</Project>
+      <Name>TwitterBootstrapMVC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LyuAdmin.Application\LyuAdmin.Application.csproj">
       <Project>{edf5d964-4c0f-4f19-b674-58a38a5e5401}</Project>
       <Name>LyuAdmin.Application</Name>

@@ -76,6 +76,10 @@
             "autoWidth": true
         });
 
+        abp.event.on('app.createOrEditUserModalSaved', function () {
+            databales.reloadList();
+        });
+
         //新增
         $("#btnNew").click(function () {
             _createOrEditModal.open();
