@@ -10,7 +10,7 @@ namespace LyuAdmin.MultiTenancy
     public class TenantManager : AbpTenantManager<Tenant, Role, User>
     {
         
-        public TenantManager(IRepository<Tenant> tenantRepository, IRepository<TenantFeatureSetting, long> tenantFeatureRepository, AbpEditionManager editionManager) : 
+        public TenantManager(IRepository<Tenant> tenantRepository, IRepository<TenantFeatureSetting, long> tenantFeatureRepository, EditionManager editionManager) : 
             base(tenantRepository, tenantFeatureRepository, editionManager)
         {
         }

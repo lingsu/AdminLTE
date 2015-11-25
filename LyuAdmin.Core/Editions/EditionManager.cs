@@ -6,7 +6,8 @@ namespace LyuAdmin.Editions
 {
     public class EditionManager : AbpEditionManager
     {
-        public EditionManager(IRepository<Edition> editionRepository, IRepository<EditionFeatureSetting, long> editionFeatureRepository) : base(editionRepository, editionFeatureRepository)
+        public EditionManager(IRepository<Edition> editionRepository, IRepository<EditionFeatureSetting, long> editionFeatureRepository) : 
+            base(editionRepository, editionFeatureRepository)
         {
         }
     }

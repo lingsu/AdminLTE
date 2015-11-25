@@ -6,7 +6,7 @@ using LyuAdmin.Roles.Dto;
 
 namespace LyuAdmin.Users.Dto
 {
-   
+   [AutoMapFrom(typeof(User))]
     public class UserQueryDto : Entity<long>
     {
         public string Name { get; set; }

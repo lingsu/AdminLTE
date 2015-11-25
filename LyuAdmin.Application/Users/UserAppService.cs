@@ -31,7 +31,6 @@ namespace LyuAdmin.Users
         private readonly RoleManager _roleManager;
         private readonly IPermissionManager _permissionManager;
         private readonly IRepository<UserRole,long> _userRoleRepository;
-        private readonly IRepository<Role, long> _roleRepository;
 
 
         public UserAppService(UserManager userManager, RoleManager roleManager, IPermissionManager permissionManager, IRepository<UserRole, long> userRoleRepository)
@@ -64,7 +63,6 @@ namespace LyuAdmin.Users
         /// </summary>
         public async Task<QueryResultOutput<UserQueryDto>> GetUserQuery(GetUserQueryInput input)
         {
-
             var result = await _userManager.Users
                 .WhereIf(!input.Search.Value.IsNullOrWhiteSpace(), x => x.UserName.Contains(input.Search.Value))
                 .OrderByDescending(x => x.CreationTime)
@@ -129,11 +127,18 @@ namespace LyuAdmin.Users
                     entity.Roles.Add(new UserRole { RoleId = role.Id });
                 }
             }
+            if (input.User.SetRandomPassword)
+            {
+                entity.Password = new PasswordHasher().HashPassword("123qwe");
+            }
+            else
+            {
+                entity.Password = new PasswordHasher().HashPassword(input.User.Password);
+            }
             //foreach (var defaultRole in await _roleManager.Roles.Where(r => r.IsDefault).ToListAsync())
             //{
             //    entity.Roles.Add(new UserRole { RoleId = defaultRole.Id });
             //}
-            entity.Password = new PasswordHasher().HashPassword("123qwe");
             var identityResult = await _userManager.CreateAsync(entity);
             identityResult.CheckErrors(LocalizationManager);
         }

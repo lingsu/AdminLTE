@@ -41,7 +41,7 @@ namespace LyuAdmin.Users.Dto
         public string SendActivationEmail { get; set; }
         [DisplayName("激活")]
         public bool IsActive { get; set; }
-        [DisplayName("使用随机密码")]
+        [DisplayName("使用默认密码")]
         public bool SetRandomPassword { get; set; }
 
         public IList<string> AssignedRoleNames
