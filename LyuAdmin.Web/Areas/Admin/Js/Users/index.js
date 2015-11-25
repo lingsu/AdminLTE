@@ -49,7 +49,7 @@
             { data: 'name', title: '名字' },
             { data: 'surname', title: '姓氏' },
             {
-                data: 'roles',
+                data: 'assignedRoleNames',
                 title: '角色',
                 render: function (data) {
                     var roleNames = '';

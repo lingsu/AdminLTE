@@ -11,13 +11,16 @@ namespace LyuAdmin.Users.Dto
     {
         private IList<string> _assignedRoleNames;
         [Required]
+        [DisplayName("名字")]
         public string Name { get; set; }
         [StringLength(32)]
         [Required]
+        [DisplayName("姓氏")]
         public string Surname { get; set; }
 
         [StringLength(32)]
         [Required]
+        [DisplayName("用户名")]
         public string UserName { get; set; }
 
         [StringLength(32,MinimumLength = 6)]
@@ -29,14 +32,13 @@ namespace LyuAdmin.Users.Dto
         public string PasswordRepeat { get; set; }
         [Required]
         [StringLength(256)]
+        [DisplayName("邮箱地址")]
         public string EmailAddress { get; set; }
 
-        public bool IsEmailConfirmed { get; set; }
         [DisplayName("下次登录需要修改密码")]
         public bool ShouldChangePasswordOnNextLogin { get; set; }
         [DisplayName("发送激活邮件")]
         public string SendActivationEmail { get; set; }
-        public string EmailConfirmationCode { get; set; }
         [DisplayName("激活")]
         public bool IsActive { get; set; }
         [DisplayName("使用随机密码")]

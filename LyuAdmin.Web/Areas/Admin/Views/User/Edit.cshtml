@@ -27,7 +27,10 @@
             </li>
             <li class="">
                 <a href="#RolesTab" data-toggle="tab" aria-expanded="false">
-                    角色 <b class="badge badge-primary"><span id="assigned-role-count">1</span></b>
+                    角色 @if (Model.User.AssignedRoleNames.Count > 0)
+                    {
+                        <b class="badge badge-primary"><span id="assigned-role-count">@Model.User.AssignedRoleNames.Count</span></b>
+                    } 
                 </a>
             </li>
         </ul>

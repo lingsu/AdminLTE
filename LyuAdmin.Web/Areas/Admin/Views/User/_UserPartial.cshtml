@@ -17,7 +17,7 @@
             @Html.Bootstrap().TextBoxFor(x => x.Name)
         </div>
 
-        <div class="form-group form-md-line-input form-md-floating-label no-hint">
+        <div class="form-group">
             @Html.Bootstrap().LabelFor(x => x.Surname)
             @Html.Bootstrap().TextBoxFor(x => x.Surname)
         </div>
@@ -40,20 +40,18 @@
 
 <div class="md-checkbox-list">
     <div class="md-checkbox">
-        <input id="EditUser_SetRandomPassword" class="md-check" type="checkbox" name="SetRandomPassword" value="true" />
+        <input id="EditUser_SetRandomPassword" class="md-check" type="checkbox" name="SetRandomPassword" value="true"/>
         <label for="EditUser_SetRandomPassword">
-            <span class="inc"></span>
-            <span class="check"></span>
-            <span class="box"></span>
             使用随机密码
         </label>
     </div>
 </div>
-<div class="form-group form-md-line-input form-md-floating-label no-hint" style="display: block">
+
+<div class="form-group" style="display: block">
     @Html.Bootstrap().LabelFor(x => x.Password)
     @Html.Bootstrap().PasswordFor(x => x.Password)
 </div>
-<div class="form-group form-md-line-input form-md-floating-label no-hint" style="display: block">
+<div class="form-group" style="display: block">
     @Html.Bootstrap().LabelFor(x => x.PasswordRepeat)
     @Html.Bootstrap().PasswordFor(x => x.PasswordRepeat)
 </div>

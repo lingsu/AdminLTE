@@ -31,6 +31,7 @@ namespace LyuAdmin.Users
         private readonly RoleManager _roleManager;
         private readonly IPermissionManager _permissionManager;
         private readonly IRepository<UserRole,long> _userRoleRepository;
+        private readonly IRepository<Role, long> _roleRepository;
 
 
         public UserAppService(UserManager userManager, RoleManager roleManager, IPermissionManager permissionManager, IRepository<UserRole, long> userRoleRepository)
@@ -70,10 +71,12 @@ namespace LyuAdmin.Users
                .ToOutputAsync<UserQueryDto>(input);
             foreach (var userQueryDto in result.Data)
             {
-                userQueryDto.Roles = await (from userRole in _userRoleRepository.GetAll()
-                                            join role in _roleManager.Roles on userRole.RoleId equals role.Id
-                                            where userRole.UserId == userQueryDto.Id
-                                            select role).To<RoleQueryDto>().ToListAsync();
+                //var roles = await _userManager.GetRolesAsync(userQueryDto.Id);
+                //userQueryDto.AssignedRoleNames = roles.MapTo<List<RoleQueryDto>>();
+                userQueryDto.AssignedRoleNames = await (from userRole in _userRoleRepository.GetAll()
+                                                        join role in _roleManager.Roles on userRole.RoleId equals role.Id
+                                                        where userRole.UserId == userQueryDto.Id
+                                                        select role).To<RoleQueryDto>().ToListAsync();
             }
 
             return result;
