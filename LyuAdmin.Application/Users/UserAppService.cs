@@ -155,29 +155,60 @@ namespace LyuAdmin.Users
             //    throw new UserFriendlyException(L("NameIsExists"));
             //}
             var entity = await _userManager.GetUserByIdAsync(input.User.Id);
+            var password = entity.Password;
+            input.User.MapTo(entity);
 
-            //entity.Roles = new List<UserRole>();
+            if (string.IsNullOrEmpty(input.User.Password))
+                entity.Password = password;
+            else
+                entity.Password = new PasswordHasher().HashPassword(input.User.Password);
 
-            var newRoles=new List<UserRole>();
-            var oldRoles = new List<int>();
+            var newCustomerRoles = new List<Role>();
 
-            foreach (var assignedRoleName in input.AssignedRoleNames)
+            var allCustomerRoles = await _roleManager.Roles.ToListAsync();
+
+            foreach (var assignedRoleName in allCustomerRoles)
+                if (input.AssignedRoleNames.Contains(assignedRoleName.Name))
+                    newCustomerRoles.Add(assignedRoleName);
+
+            var customerRolesError = ValidateCustomerRoles(newCustomerRoles);
+
+            foreach (var customerRole in allCustomerRoles)
             {
-                var role = await _roleManager.GetRoleByNameAsync(assignedRoleName);
-                if (role != null)
+                if (input.AssignedRoleNames.Contains(customerRole.Name))
                 {
-                    newRoles.Add(new UserRole { RoleId = role.Id });
+                    if (!entity.Roles.Any(x=>x.RoleId == customerRole.Id))
+                    {
+                        _userManager.AddToRole(entity.Id, customerRole.Name);
+                       // entity.Roles.Add(new UserRole(entity.Id, customerRole.Id));
+                    }
+                }
+                else
+                {
+                    var role = entity.Roles.FirstOrDefault(x => x.RoleId == customerRole.Id);
+                    if (role != null)
+                    {
+                        entity.Roles.Remove(role);
+                        _userManager.RemoveFromRole(entity.Id, customerRole.Name);
+                    }
                 }
             }
-            entity.Roles = newRoles;
+            // entity.Roles = newCustomerRoles;
             //foreach (var userRole in entity.Roles)
             //{
             //    userRole.RoleId
             //}
 
-            await _userManager.UpdateAsync(input.User.MapTo(entity));
+            var identityResult = await _userManager.UpdateAsync(entity);
+            identityResult.CheckErrors(LocalizationManager);
         }
 
+        private string ValidateCustomerRoles(IList<Role> customerRoles)
+        {
+
+            //no errors
+            return "";
+        }
         /// <summary>
         /// É¾³ýÓÃ»§
         /// </summary>
