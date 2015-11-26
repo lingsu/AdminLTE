@@ -1,6 +1,7 @@
 ﻿@model LyuAdmin.Users.Dto.UserDto
 @{
     var isAdmin = Model.UserName == "admin";
+    var setRandomPassword = Model.Id == 0;
 }
 @if (Model.Id > 0)
 {
@@ -12,46 +13,45 @@
         <img src="~/Content/Common/Images/default-profile-picture.png" width="128" height="128" class="img-thumbnail img-rounded user-edit-dialog-profile-image" />
     </div>
     <div class="col-sm-8">
-        <div class="form-group">
+        <div class="form-group form-md-line-input">
             @Html.Bootstrap().LabelFor(x => x.Name)
             @Html.Bootstrap().TextBoxFor(x => x.Name)
         </div>
 
-        <div class="form-group">
+        <div class="form-group form-md-line-input">
             @Html.Bootstrap().LabelFor(x => x.Surname)
             @Html.Bootstrap().TextBoxFor(x => x.Surname)
         </div>
     </div>
 </div>
-<div class="form-group">
+<div class="form-group form-md-line-input">
     @Html.Bootstrap().LabelFor(x => x.EmailAddress)
-    @Html.Bootstrap().TextBoxFor(x => x.EmailAddress)
-
+    @Html.Bootstrap().TextBoxFor(x => x.EmailAddress).HtmlAttributes(new { type = "email" })
 </div>
-<div class="form-group">
+<div class="form-group form-md-line-input">
     @Html.Bootstrap().LabelFor(x => x.UserName)
-    @Html.Bootstrap().TextBoxFor(x => x.UserName)
-    .Disabled(isAdmin)
+    @Html.Bootstrap().TextBoxFor(x => x.UserName).Disabled(isAdmin)
     @if (isAdmin)
     {
         <span class="help-block">管理用户，不能修改用户名.</span>
     }
 </div>
 
+
 <div class="md-checkbox-list">
     <div class="md-checkbox">
-        <input id="EditUser_SetRandomPassword" class="md-check" type="checkbox" name="SetRandomPassword" value="true"/>
+        @Html.Bootstrap().CheckBoxFor(x=>x.SetRandomPassword).IsChecked(setRandomPassword).Id("EditUser_SetRandomPassword")
         <label for="EditUser_SetRandomPassword">
             使用默认密码
         </label>
     </div>
 </div>
 
-<div class="form-group" style="display: block">
+<div class="form-group form-md-line-input" style="display:  @(setRandomPassword ? "none":"block")">
     @Html.Bootstrap().LabelFor(x => x.Password)
     @Html.Bootstrap().PasswordFor(x => x.Password)
 </div>
-<div class="form-group" style="display: block">
+<div class="form-group form-md-line-input" style="display: @(setRandomPassword ? "none":"block")">
     @Html.Bootstrap().LabelFor(x => x.PasswordRepeat)
     @Html.Bootstrap().PasswordFor(x => x.PasswordRepeat)
 </div>

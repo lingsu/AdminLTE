@@ -149,11 +149,31 @@ namespace LyuAdmin.Users
         [AbpAuthorize(UsersPermissions.User_UpdateUser)]
         public virtual async Task UpdateUser(CreateOrUpdateUserInput input)
         {
+
             //if (await _userRepository.IsExistsUserByName(input.CategoryName, input.Id))
             //{
             //    throw new UserFriendlyException(L("NameIsExists"));
             //}
             var entity = await _userManager.GetUserByIdAsync(input.User.Id);
+
+            //entity.Roles = new List<UserRole>();
+
+            var newRoles=new List<UserRole>();
+            var oldRoles = new List<int>();
+
+            foreach (var assignedRoleName in input.AssignedRoleNames)
+            {
+                var role = await _roleManager.GetRoleByNameAsync(assignedRoleName);
+                if (role != null)
+                {
+                    newRoles.Add(new UserRole { RoleId = role.Id });
+                }
+            }
+            entity.Roles = newRoles;
+            //foreach (var userRole in entity.Roles)
+            //{
+            //    userRole.RoleId
+            //}
 
             await _userManager.UpdateAsync(input.User.MapTo(entity));
         }

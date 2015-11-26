@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using Abp.Application.Services.Dto;
+using Abp.Runtime.Validation;
 
 namespace LyuAdmin.Users.Dto
 {
-    public class CreateOrUpdateUserInput
+    public class CreateOrUpdateUserInput: IInputDto
     {
         public UserDto User { get; set; }
         public IEnumerable<string> AssignedRoleNames { get; set; }

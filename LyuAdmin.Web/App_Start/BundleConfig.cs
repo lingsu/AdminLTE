@@ -79,7 +79,9 @@ namespace LyuAdmin.Web
             bundles.Add(
                 new ScriptBundle("~/js/form").Include(
                     "~/Scripts/jquery.validate.min.js",
-                    "~/Abp/Framework/scripts/libs/jquery-validation/messages_zh.min.js"));
+                    "~/Abp/Framework/scripts/libs/jquery-validation/abp.validation.js",
+                    "~/Abp/Framework/scripts/libs/jquery-validation/messages_zh.min.js"
+                    ));
 
             bundles.Add(
                 new ScriptBundle("~/js/datatables").Include(

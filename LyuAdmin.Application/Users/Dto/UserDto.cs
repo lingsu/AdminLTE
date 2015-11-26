@@ -1,13 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Abp.Domain.Entities;
+using Abp.Extensions;
+using Abp.Runtime.Validation;
+using Lyu.Utility.Mvc.ComponentModel.DataAnnotations;
 
 namespace LyuAdmin.Users.Dto
 {
     [AutoMap(typeof(User))]
-    public class UserDto : Entity<long>
+    public class UserDto : Entity<long>, IInputDto, ICustomValidate
     {
         private IList<string> _assignedRoleNames;
         [Required]
@@ -33,6 +37,9 @@ namespace LyuAdmin.Users.Dto
         [Required]
         [StringLength(256)]
         [DisplayName("邮箱地址")]
+      
+        //[EmailAddress]
+        [Email]
         public string EmailAddress { get; set; }
 
         [DisplayName("下次登录需要修改密码")]
@@ -50,5 +57,15 @@ namespace LyuAdmin.Users.Dto
             set { _assignedRoleNames = value; } 
         }
 
+        public void AddValidationErrors(List<ValidationResult> results)
+        {
+            if (Id == 0)
+            {
+                if (!SetRandomPassword && Password.IsNullOrEmpty())
+                {
+                    results.Add(new ValidationResult("这是必填字段", new List<string>() { "Password" }));
+                }
+            }
+        }
     }
 }

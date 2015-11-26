@@ -260,6 +260,7 @@
     <Content Include="Abp\Framework\scripts\libs\abp.jtable.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.spin.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.sweet-alert.js" />
+    <Content Include="Abp\Framework\scripts\libs\jquery-validation\abp.validation.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.toastr.js" />
     <Content Include="Abp\Framework\scripts\libs\angularjs\abp.ng.js" />
     <Content Include="Abp\Framework\scripts\libs\jquery-validation\messages_zh.min.js" />
@@ -1378,6 +1379,7 @@
     <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
     <Content Include="TwitterBootstrapMvcLicense.lic" />
     <Content Include="Areas\Admin\Views\User\_UserPartial.cshtml" />
+    <Content Include="Content\AdminLTE\dist\css\Lyu.css" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
