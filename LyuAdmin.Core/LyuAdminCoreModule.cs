@@ -38,7 +38,7 @@ namespace LyuAdmin
                     )
                 );
 
-            
+           // Configuration.
             Configuration.Authorization.Providers.Add<AppAuthorizationProvider>();
             Configuration.Navigation.Providers.Add<AdministrationNavigationProvider>();
         }

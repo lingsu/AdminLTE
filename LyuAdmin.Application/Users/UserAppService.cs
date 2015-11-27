@@ -155,12 +155,10 @@ namespace LyuAdmin.Users
             //    throw new UserFriendlyException(L("NameIsExists"));
             //}
             var entity = await _userManager.GetUserByIdAsync(input.User.Id);
-            var password = entity.Password;
+           
             input.User.MapTo(entity);
 
-            if (string.IsNullOrEmpty(input.User.Password))
-                entity.Password = password;
-            else
+            if (!string.IsNullOrEmpty(input.User.Password))
                 entity.Password = new PasswordHasher().HashPassword(input.User.Password);
 
             var newCustomerRoles = new List<Role>();
